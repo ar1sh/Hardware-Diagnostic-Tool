@@ -1,0 +1,284 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 46;
+	objects = {
+
+/* Begin PBXBuildFile section */
+		2D82F69C1457A6AD00DF6909 /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 2D82F69B1457A6AD00DF6909 /* UIKit.framework */; };
+		2D82F69E1457A6AD00DF6909 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 2D82F69D1457A6AD00DF6909 /* Foundation.framework */; };
+		2D82F6A01457A6AD00DF6909 /* CoreGraphics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 2D82F69F1457A6AD00DF6909 /* CoreGraphics.framework */; };
+		2D82F6A21457A6AD00DF6909 /* CoreData.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 2D82F6A11457A6AD00DF6909 /* CoreData.framework */; };
+		2D82F6A81457A6AD00DF6909 /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = 2D82F6A61457A6AD00DF6909 /* InfoPlist.strings */; };
+		2D82F6AA1457A6AD00DF6909 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 2D82F6A91457A6AD00DF6909 /* main.m */; };
+		2D82F6AE1457A6AD00DF6909 /* HDTAppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 2D82F6AD1457A6AD00DF6909 /* HDTAppDelegate.m */; };
+		2D82F6B11457A6AD00DF6909 /* Hardware_Diagnostic_Tool.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 2D82F6AF1457A6AD00DF6909 /* Hardware_Diagnostic_Tool.xcdatamodeld */; };
+/* End PBXBuildFile section */
+
+/* Begin PBXFileReference section */
+		2D82F6971457A6AD00DF6909 /* Hardware Diagnostic Tool.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Hardware Diagnostic Tool.app"; sourceTree = BUILT_PRODUCTS_DIR; };
+		2D82F69B1457A6AD00DF6909 /* UIKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = UIKit.framework; path = System/Library/Frameworks/UIKit.framework; sourceTree = SDKROOT; };
+		2D82F69D1457A6AD00DF6909 /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
+		2D82F69F1457A6AD00DF6909 /* CoreGraphics.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreGraphics.framework; path = System/Library/Frameworks/CoreGraphics.framework; sourceTree = SDKROOT; };
+		2D82F6A11457A6AD00DF6909 /* CoreData.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreData.framework; path = System/Library/Frameworks/CoreData.framework; sourceTree = SDKROOT; };
+		2D82F6A51457A6AD00DF6909 /* Hardware Diagnostic Tool-Info.plist */ = {isa = PBXFileReference; path = "Hardware Diagnostic Tool-Info.plist"; sourceTree = "<group>"; };
+		2D82F6A71457A6AD00DF6909 /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/InfoPlist.strings; sourceTree = "<group>"; };
+		2D82F6A91457A6AD00DF6909 /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
+		2D82F6AB1457A6AD00DF6909 /* Hardware Diagnostic Tool-Prefix.pch */ = {isa = PBXFileReference; path = "Hardware Diagnostic Tool-Prefix.pch"; sourceTree = "<group>"; };
+		2D82F6AC1457A6AD00DF6909 /* HDTAppDelegate.h */ = {isa = PBXFileReference; path = HDTAppDelegate.h; sourceTree = "<group>"; };
+		2D82F6AD1457A6AD00DF6909 /* HDTAppDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = HDTAppDelegate.m; sourceTree = "<group>"; };
+		2D82F6B01457A6AD00DF6909 /* Hardware_Diagnostic_Tool.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = Hardware_Diagnostic_Tool.xcdatamodel; sourceTree = "<group>"; };
+/* End PBXFileReference section */
+
+/* Begin PBXFrameworksBuildPhase section */
+		2D82F6941457A6AD00DF6909 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				2D82F69C1457A6AD00DF6909 /* UIKit.framework in Frameworks */,
+				2D82F69E1457A6AD00DF6909 /* Foundation.framework in Frameworks */,
+				2D82F6A01457A6AD00DF6909 /* CoreGraphics.framework in Frameworks */,
+				2D82F6A21457A6AD00DF6909 /* CoreData.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXFrameworksBuildPhase section */
+
+/* Begin PBXGroup section */
+		2D82F68C1457A6AD00DF6909 = {
+			isa = PBXGroup;
+			children = (
+				2D82F6A31457A6AD00DF6909 /* Hardware Diagnostic Tool */,
+				2D82F69A1457A6AD00DF6909 /* Frameworks */,
+				2D82F6981457A6AD00DF6909 /* Products */,
+			);
+			sourceTree = "<group>";
+		};
+		2D82F6981457A6AD00DF6909 /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				2D82F6971457A6AD00DF6909 /* Hardware Diagnostic Tool.app */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		2D82F69A1457A6AD00DF6909 /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				2D82F69B1457A6AD00DF6909 /* UIKit.framework */,
+				2D82F69D1457A6AD00DF6909 /* Foundation.framework */,
+				2D82F69F1457A6AD00DF6909 /* CoreGraphics.framework */,
+				2D82F6A11457A6AD00DF6909 /* CoreData.framework */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		2D82F6A31457A6AD00DF6909 /* Hardware Diagnostic Tool */ = {
+			isa = PBXGroup;
+			children = (
+				2D82F6AC1457A6AD00DF6909 /* HDTAppDelegate.h */,
+				2D82F6AD1457A6AD00DF6909 /* HDTAppDelegate.m */,
+				2D82F6AF1457A6AD00DF6909 /* Hardware_Diagnostic_Tool.xcdatamodeld */,
+				2D82F6A41457A6AD00DF6909 /* Supporting Files */,
+			);
+			path = "Hardware Diagnostic Tool";
+			sourceTree = "<group>";
+		};
+		2D82F6A41457A6AD00DF6909 /* Supporting Files */ = {
+			isa = PBXGroup;
+			children = (
+				2D82F6A51457A6AD00DF6909 /* Hardware Diagnostic Tool-Info.plist */,
+				2D82F6A61457A6AD00DF6909 /* InfoPlist.strings */,
+				2D82F6A91457A6AD00DF6909 /* main.m */,
+				2D82F6AB1457A6AD00DF6909 /* Hardware Diagnostic Tool-Prefix.pch */,
+			);
+			name = "Supporting Files";
+			sourceTree = "<group>";
+		};
+/* End PBXGroup section */
+
+/* Begin PBXNativeTarget section */
+		2D82F6961457A6AD00DF6909 /* Hardware Diagnostic Tool */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 2D82F6B41457A6AD00DF6909 /* Build configuration list for PBXNativeTarget "Hardware Diagnostic Tool" */;
+			buildPhases = (
+				2D82F6931457A6AD00DF6909 /* Sources */,
+				2D82F6941457A6AD00DF6909 /* Frameworks */,
+				2D82F6951457A6AD00DF6909 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = "Hardware Diagnostic Tool";
+			productName = "Hardware Diagnostic Tool";
+			productReference = 2D82F6971457A6AD00DF6909 /* Hardware Diagnostic Tool.app */;
+			productType = "com.apple.product-type.application";
+		};
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+		2D82F68E1457A6AD00DF6909 /* Project object */ = {
+			isa = PBXProject;
+			attributes = {
+				LastUpgradeCheck = 0420;
+			};
+			buildConfigurationList = 2D82F6911457A6AD00DF6909 /* Build configuration list for PBXProject "Hardware Diagnostic Tool" */;
+			compatibilityVersion = "Xcode 3.2";
+			developmentRegion = English;
+			hasScannedForEncodings = 0;
+			knownRegions = (
+				en,
+			);
+			mainGroup = 2D82F68C1457A6AD00DF6909;
+			productRefGroup = 2D82F6981457A6AD00DF6909 /* Products */;
+			projectDirPath = "";
+			projectRoot = "";
+			targets = (
+				2D82F6961457A6AD00DF6909 /* Hardware Diagnostic Tool */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin PBXResourcesBuildPhase section */
+		2D82F6951457A6AD00DF6909 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				2D82F6A81457A6AD00DF6909 /* InfoPlist.strings in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXResourcesBuildPhase section */
+
+/* Begin PBXSourcesBuildPhase section */
+		2D82F6931457A6AD00DF6909 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				2D82F6AA1457A6AD00DF6909 /* main.m in Sources */,
+				2D82F6AE1457A6AD00DF6909 /* HDTAppDelegate.m in Sources */,
+				2D82F6B11457A6AD00DF6909 /* Hardware_Diagnostic_Tool.xcdatamodeld in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXSourcesBuildPhase section */
+
+/* Begin PBXVariantGroup section */
+		2D82F6A61457A6AD00DF6909 /* InfoPlist.strings */ = {
+			isa = PBXVariantGroup;
+			children = (
+				2D82F6A71457A6AD00DF6909 /* en */,
+			);
+			name = InfoPlist.strings;
+			sourceTree = "<group>";
+		};
+/* End PBXVariantGroup section */
+
+/* Begin XCBuildConfiguration section */
+		2D82F6B21457A6AD00DF6909 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				ARCHS = "$(ARCHS_STANDARD_32_BIT)";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				COPY_PHASE_STRIP = NO;
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				GCC_SYMBOLS_PRIVATE_EXTERN = NO;
+				GCC_VERSION = com.apple.compilers.llvm.clang.1_0;
+				GCC_WARN_ABOUT_MISSING_PROTOTYPES = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 5.0;
+				SDKROOT = iphoneos;
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Debug;
+		};
+		2D82F6B31457A6AD00DF6909 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				ARCHS = "$(ARCHS_STANDARD_32_BIT)";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				COPY_PHASE_STRIP = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_VERSION = com.apple.compilers.llvm.clang.1_0;
+				GCC_WARN_ABOUT_MISSING_PROTOTYPES = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 5.0;
+				OTHER_CFLAGS = "-DNS_BLOCK_ASSERTIONS=1";
+				SDKROOT = iphoneos;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				VALIDATE_PRODUCT = YES;
+			};
+			name = Release;
+		};
+		2D82F6B51457A6AD00DF6909 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				GCC_PRECOMPILE_PREFIX_HEADER = YES;
+				GCC_PREFIX_HEADER = "Hardware Diagnostic Tool/Hardware Diagnostic Tool-Prefix.pch";
+				INFOPLIST_FILE = "Hardware Diagnostic Tool/Hardware Diagnostic Tool-Info.plist";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				WRAPPER_EXTENSION = app;
+			};
+			name = Debug;
+		};
+		2D82F6B61457A6AD00DF6909 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				GCC_PRECOMPILE_PREFIX_HEADER = YES;
+				GCC_PREFIX_HEADER = "Hardware Diagnostic Tool/Hardware Diagnostic Tool-Prefix.pch";
+				INFOPLIST_FILE = "Hardware Diagnostic Tool/Hardware Diagnostic Tool-Info.plist";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				WRAPPER_EXTENSION = app;
+			};
+			name = Release;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		2D82F6911457A6AD00DF6909 /* Build configuration list for PBXProject "Hardware Diagnostic Tool" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				2D82F6B21457A6AD00DF6909 /* Debug */,
+				2D82F6B31457A6AD00DF6909 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		2D82F6B41457A6AD00DF6909 /* Build configuration list for PBXNativeTarget "Hardware Diagnostic Tool" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				2D82F6B51457A6AD00DF6909 /* Debug */,
+				2D82F6B61457A6AD00DF6909 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+		};
+/* End XCConfigurationList section */
+
+/* Begin XCVersionGroup section */
+		2D82F6AF1457A6AD00DF6909 /* Hardware_Diagnostic_Tool.xcdatamodeld */ = {
+			isa = XCVersionGroup;
+			children = (
+				2D82F6B01457A6AD00DF6909 /* Hardware_Diagnostic_Tool.xcdatamodel */,
+			);
+			currentVersion = 2D82F6B01457A6AD00DF6909 /* Hardware_Diagnostic_Tool.xcdatamodel */;
+			path = Hardware_Diagnostic_Tool.xcdatamodeld;
+			sourceTree = "<group>";
+			versionGroupType = wrapper.xcdatamodel;
+		};
+/* End XCVersionGroup section */
+	};
+	rootObject = 2D82F68E1457A6AD00DF6909 /* Project object */;
+}
