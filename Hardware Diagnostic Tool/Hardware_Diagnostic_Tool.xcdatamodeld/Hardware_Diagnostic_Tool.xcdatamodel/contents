@@ -1,4 +1,19 @@
 <?xml version="1.0" encoding="UTF-8" standalone="yes"?>
-<model name="Test1.xcdatamodel" userDefinedModelVersionIdentifier="" type="com.apple.IDECoreDataModeler.DataModel" documentVersion="1.0" lastSavedToolsVersion="1" systemVersion="11A491" minimumToolsVersion="Automatic" macOSVersion="Automatic" iOSVersion="Automatic">
-    <elements/>
+<model name="" userDefinedModelVersionIdentifier="" type="com.apple.IDECoreDataModeler.DataModel" documentVersion="1.0" lastSavedToolsVersion="878" systemVersion="11C74" minimumToolsVersion="Automatic" macOSVersion="Automatic" iOSVersion="Automatic">
+    <entity name="Ads" representedClassName="Ads" syncable="YES">
+        <attribute name="purchased" optional="YES" attributeType="Boolean" syncable="YES"/>
+    </entity>
+    <entity name="PixelCheckHistory" syncable="YES">
+        <attribute name="Black" optional="YES" attributeType="Boolean"/>
+        <attribute name="Blue" optional="YES" attributeType="Boolean"/>
+        <attribute name="Date" optional="YES" attributeType="Date"/>
+        <attribute name="Green" optional="YES" attributeType="Boolean"/>
+        <attribute name="HistoryID" optional="YES" attributeType="Integer 16" defaultValueString="0"/>
+        <attribute name="Red" optional="YES" attributeType="Boolean"/>
+        <attribute name="White" optional="YES" attributeType="Boolean"/>
+    </entity>
+    <elements>
+        <element name="PixelCheckHistory" positionX="160" positionY="192" width="128" height="150"/>
+        <element name="Ads" positionX="160" positionY="192" width="128" height="60"/>
+    </elements>
 </model>

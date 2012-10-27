@@ -7,28 +7,112 @@
 //
 
 #import "HDTAppDelegate.h"
+#import "ScreenTestViewController.h"
+#import "LocationMapViewController.h"
+#import "MainMotionScreenViewController.h"
+#import "SoundFirstViewController.h"
+#import "DeviceInfoViewController.h"
+#import "Ads.h"
 
 @implementation HDTAppDelegate
+
+@synthesize delegate;
+@synthesize currentController, bannerView;
 
 @synthesize window = _window;
 @synthesize managedObjectContext = __managedObjectContext;
 @synthesize managedObjectModel = __managedObjectModel;
 @synthesize persistentStoreCoordinator = __persistentStoreCoordinator;
 
-- (void)dealloc
+- (BOOL)AdsPurchased
 {
-    [_window release];
-    [__managedObjectContext release];
-    [__managedObjectModel release];
-    [__persistentStoreCoordinator release];
-    [super dealloc];
+    Ads *ads = [Ads purchaseValue];
+    return [ads.purchased boolValue];
+}
+
+- (void)updateBanner
+{
+    if ([self AdsPurchased]) {
+        [self.delegate hideBannerView:bannerView];
+        bannerView = nil;
+    }
+}
+
+- (void)bannerViewDidLoadAd:(ADBannerView *)banner
+{
+    [self.delegate showBannerView:banner];
+}
+
+- (void)bannerView:(ADBannerView *)banner didFailToReceiveAdWithError:(NSError *)error
+{
+    [self.delegate hideBannerView:banner];
+}
+
+- (CMMotionManager *)motionManager
+{
+	if (!motionManager) motionManager = [[CMMotionManager alloc] init];
+	return motionManager;
 }
 
 - (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions
 {
-    self.window = [[[UIWindow alloc] initWithFrame:[[UIScreen mainScreen] bounds]] autorelease];
+    self.window = [[UIWindow alloc] initWithFrame:[[UIScreen mainScreen] bounds]];
     // Override point for customization after application launch.
-    self.window.backgroundColor = [UIColor whiteColor];
+    
+    //Application
+    if (!tbc) {
+        tbc = [[UITabBarController alloc] init];
+    }
+    
+    //iAd banner
+    if (![self AdsPurchased]) {
+        self.bannerView = [[ADBannerView alloc] init];
+        CGRect frame = self.bannerView.frame;
+        frame.origin = CGPointMake(CGRectGetMinX([[UIScreen mainScreen] bounds]), CGRectGetMaxY([[UIScreen mainScreen] bounds]));
+        bannerView.frame = frame;
+        bannerView.delegate = self;
+    }
+    //Display
+    ScreenTestViewController *stvc = [[ScreenTestViewController alloc] init];
+    self.delegate = stvc;
+    UINavigationController *screenNVC = [[UINavigationController alloc] init];
+    [screenNVC pushViewController:stvc animated:NO];
+    //Location
+    LocationMapViewController *lmvc = [[LocationMapViewController alloc] init];
+    UINavigationController *locationNVC = [[UINavigationController alloc] init];
+    [locationNVC pushViewController:lmvc animated:NO];
+    
+    //Motion
+    MainMotionScreenViewController *msvc = [[MainMotionScreenViewController alloc] init];
+    UINavigationController *motionNVC = [[UINavigationController alloc] init];
+    [motionNVC pushViewController:msvc animated:NO];
+    
+    //Sound
+    SoundFirstViewController *sfvc = [[SoundFirstViewController alloc] init];
+    UINavigationController *soundNVC = [[UINavigationController alloc] init];
+    [soundNVC pushViewController:sfvc animated:NO];
+    
+    //Device Info
+    DeviceInfoViewController *divc = [[DeviceInfoViewController alloc] init];
+    UINavigationController *deviceNVC = [[UINavigationController alloc] init];
+    [deviceNVC pushViewController:divc animated:NO];
+    
+    //Main
+    screenNVC.delegate = self;
+    locationNVC.delegate = self;
+    motionNVC.delegate = self;
+    soundNVC.delegate = self;
+    deviceNVC.delegate = self;
+    
+    [tbc setViewControllers:[NSArray arrayWithObjects:screenNVC, locationNVC, motionNVC, soundNVC, deviceNVC, nil]];
+    
+    self.currentController = (UIViewController<BannerViewDelegate> *)((UINavigationController *)tbc.selectedViewController).visibleViewController;
+    if ([((UINavigationController *)tbc.selectedViewController).visibleViewController conformsToProtocol:@protocol(BannerViewDelegate)]) {
+        self.currentController = (UIViewController <BannerViewDelegate> *)((UINavigationController *)tbc.selectedViewController).visibleViewController;
+        //[(UIViewController <BannerViewDelegate> *)((UINavigationController *)tbc.selectedViewController).visibleViewController showBannerView:bannerView];
+    }
+    
+    [self.window addSubview:tbc.view];
     [self.window makeKeyAndVisible];
     return YES;
 }
@@ -69,6 +153,8 @@
     [self saveContext];
 }
 
+
+
 - (void)saveContext
 {
     NSError *error = nil;
@@ -86,6 +172,40 @@
             abort();
         } 
     }
+}
+
+#pragma mark - UITabBarViewControllerDelegate
+/*
+- (void) tabBarController:(UITabBarController *)tabBarController didSelectViewController:(UIViewController *)viewController
+{
+    if (currentController == viewController) {
+        return;
+    }
+    if (bannerView.bannerLoaded) {
+        [currentController hideBannerView:bannerView];
+        [(UIViewController <BannerViewDelegate> *)viewController showBannerView:bannerView];
+    }
+    
+    self.currentController = (UIViewController <BannerViewDelegate>*)viewController;
+}
+*/
+- (void) navigationController:(UINavigationController *)navigationController didShowViewController:(UIViewController *)viewController animated:(BOOL)animated
+{
+    if (currentController == viewController) {
+        return;
+    }
+    if (bannerView.bannerLoaded) {
+        
+        if ([currentController conformsToProtocol:@protocol(BannerViewDelegate)]) {
+            [currentController hideBannerView:bannerView];
+        }
+        
+        if ([viewController conformsToProtocol:@protocol(BannerViewDelegate)]) {
+            [(UIViewController <BannerViewDelegate> *)viewController showBannerView:bannerView];
+        }
+    }
+    
+    self.currentController = (UIViewController <BannerViewDelegate>*)viewController;
 }
 
 #pragma mark - Core Data stack
